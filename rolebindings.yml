@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+ name: myuser1-rb
+ namespace: unnati
+subjects:
+- kind: ServiceAccount
+  name:  myuser1
+roleRef:
+ kind: Role
+ name: myuser1-pod-watcher
+ apiGroup: rbac.authorization.k8s.io
